@@ -1,0 +1,157 @@
+html {
+  font: italic bold 14px/22px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    margin: 20px;
+    font-size: 40px;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+label{
+  margin: 20px;
+  font-size: 30px
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  margin-top: 20px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  border-radius: 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  font-variant: small-caps;
+  cursor: pointer;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover:enabled span {
+  padding-right: 25px;
+}
+
+.button:hover:enabled span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.body_center {
+  margin-left: auto;
+  margin-right: auto;
+  width:50em;
+}
+
+.return_button {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+
+.invitation {
+  border: 6px solid blue;
+  border-radius: 30px;
+  background: rgba(255, 255, 0, 0.5);
+
+}
+
+section {
+  float: left;
+  margin: 0 1.5%;
+  width: 50%;
+  height: 100%;
+  border: 6px solid lightblue;
+  border-radius: 30px;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: : center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+aside {
+  float: left;
+  margin: 0 1.5%;
+  height: 100%;
+  border: 6px solid lightblue;
+  border-radius: 30px;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: : center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 100px;
+  text-align: center;
+}
+
+.description{
+  font-size: 75px;
+  text-align: center;
+}
+
+.text-input {
+   border-radius: 5px;
+   background-color: #def;
+   border-radius: 5px;
+   border: 1px solid #39c;
+   text-align: center;
+ }
+
+ /* HIDE RADIO */
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  box-shadow: 0 0 0 4pt blue;
+
+}
