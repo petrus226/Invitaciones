@@ -12,28 +12,45 @@
     <form action="/invite" method="post">
     <section>
       <label for="">Title</label>
-      <input type="text" class="text-input" name="title"/>
+      <input type="text" class="text-input" id="title" name="title" onchange="checkea_boton()"/>
       <label for="">Description</label>
-      <textarea name="description" class="text-input" id="" cols="30" rows="10"></textarea>
-      <button class="button"><span>Send</span></button>
+      <textarea name="description" id="description" onchange="checkea_boton()" class="text-input" id="" cols="30" rows="10"></textarea>
+      <button class="button" id="send" disabled><span>Send</span></button>
 
     </section>
     <aside>
       <label>
-        <input type="radio" name="image" value="/images/image1.jpg" checked>
+        <input type="radio" id="image1" name="image" value="/images/image1.jpg" onchange="checkea_boton()" >
         <img src="/images/image1.jpg" alt="Trulli" width="100" height="100">
       </label>
       <label>
-        <input type="radio" name="image" value="/images/image2.jpg" checked>
+        <input type="radio" id="image2" name="image" value="/images/image2.jpg" onchange="checkea_boton()" >
         <img for src="/images/image2.jpg" alt="Trulli" width="100" height="100">
       </label>
       <label>
-        <input type="radio" name="image" value="/images/image3.jpg" checked>
+        <input type="radio" id="image3" name="image" value="/images/image3.jpg" onchange="checkea_boton()" >
         <img for src="/images/image3.jpg" alt="Trulli" width="100" height="100">
       </label>
     </aside>
 
   </form>
+  <script>
+    function checkea_boton (){
+      console.log(document.getElementById("image1").checked);
+      var image_selected = document.getElementById("image1").checked ||
+      document.getElementById("image2").checked ||
+      document.getElementById("image3").checked;
+      if(document.getElementById("title").value !== "" &&
+          document.getElementById("description").value !== "" &&
+          image_selected){
+        document.getElementById('send').disabled = false;
+        console.log("dentro");
+      }
+      else
+        document.getElementById('send').disabled = true;
+
+    }
+  </script>
   </body>
 
 </html>
